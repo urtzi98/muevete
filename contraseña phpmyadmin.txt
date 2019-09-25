@@ -1,0 +1,11 @@
+contraseña phpmyadmin : iPhahquo5a
+contraseña filezilla : yah5Jah0Va
+En este link te pone como poner cotos y con su css para poner fotos de fondo, etc : 
+	https://www.lawebera.es/como-hacer/ejemplos-html-xhml/anadir-imagenes-web.php
+Subir imagenes a servidor : 
+	https://www.srcodigofuente.es/aprender-php/subir-imagenes-html-php
+Para pasar a pdf un html : 
+	https://programacion.net/articulo/como_convertir_html_a_pdf_en_php_con_fpdf_1694
+
+Cosas pendientes : 
+1.Conseguir que al tener la lista de vehiculos en el buscador poder clickar en uno y que me lleve al vehiculo

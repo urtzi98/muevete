@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Borrar vehiculo</title>
+	<link href="../css/estilos.css" rel="stylesheet">
+	<link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+            integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+            crossorigin="anonymous">
+	<style type="text/css">
+		h1{
+			margin-left: 2%;
+		}
+
+		label,a{
+			margin-left : 4%;
+		}
+	</style>
+</head>
+<body>
+	<h1>Borrar vehiculo</h1>
+
+	<label >El vehiculo ##nombre## se borrará, ¿Está seguro que quiere continuar?</label><br>
+	<a href="index.php?accion=editarvehiculo&id=1&num=##nombre##">No    </a>
+	<a href="index.php?accion=borrarvehiculo&id=2&num=##nombre##">Si</a><br>
+</body>
+</html>

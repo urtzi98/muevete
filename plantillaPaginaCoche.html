@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>#nombre#</title>
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<!-- ESTILOS -->
+	<link href="css/estilos.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="shortcut icon" href="logo_transparent.ico" type="image/x-icon"/></head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  width: 100px;
+  margin-left:1px;
+  margin-bottom: 1px;
+}
+
+.miclase{
+	margin:auto;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8; 
+  cursor: pointer; 
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+	float:left;
+  display: table;
+}
+
+/* The expanding image container */
+.container {
+	float: left;
+	width: 400px;
+	position: relative;
+}
+.close {
+  color: #eeeeee;
+  opacity: 1;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #e9e9e9;
+  text-decoration: none;
+  cursor: pointer;
+}
+.caja-comentarios{
+	margin-left: 10px;
+}
+h1{
+	margin-left: 10px;
+}
+</style>
+<body> 
+	<div class="logo"><a href="index.php"><img src="logo_transparent.png" height="60"></a></div>
+	<div class="login" style="text-align: right;">
+	##anonimo##
+		<a class="btn btn-success " href="altaLogin/index.php?accion=registro&id=1">Registro</a>
+		<a class="btn btn-info" href="altaLogin/index.php?accion=login&id=1">Log-in</a>
+	</div>
+	<br>
+	##anonimo##
+
+	##registrado##
+		<a href="/final/perfil/index.php"><i class="fa fa-user-circle-o" style="font-size:36px"></i><br>##nombreusuario##</a><br>
+	</div>
+	##registrado##
+
+		<!-- The Modal/Lightbox -->
+	<div id="myModal" class="modal">
+  		<div class="close" style="font-size: 50px" onclick="closeModal()">&times;</div>
+	  	<div class="modal-content">
+	  		##foto##
+		    <div class="mySlides">
+		      <div class="numbertext">##indicepagina## / ##indicetotal##</div>
+		      <img src="/final/admin/imagenes/##nombrecoche##/grandes/##nombrefoto##" style="width:100%;">
+		    </div>
+
+		    ##foto##
+		    <!-- Next/previous controls -->
+		    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+		</div>
+	</div>
+	<h1>#nombre#</h1>
+	<div class="miclase" style="float:left;">
+		<div class="container">
+			<img id="expandedImg" src="/final/admin/imagenes/##nombrecoche##/medianas/##nombrefoto##" style="width:100%" onclick="openModal();" class="hover-shadow">
+		</div>
+	
+
+	<!-- The four columns -->
+		<div class="row"  style="float:right;margin-left: 1px">
+			##foto##
+		  <div class="column" style="float: none; margin: 0 auto;">
+		    <img src="/final/admin/imagenes/##nombrecoche##/pequenas/##nombrefoto##" id="yes" alt="Nature" style="width:100px" onclick="cambiarFotoGrande('##nombrecoche##','##nombrefoto##','##indicepagina##');">
+		  </div>
+			##foto##
+		</div>
+	</div>
+	<table class="table" border=1>
+	##fila##
+		<tr class="bg-primary">
+			<td>
+				#elemento#
+			</td>
+			<td>
+				#valor#
+			</td>
+		</tr>
+	##fila##
+	</table>
+	<!-- Aqui ira los comentarios de la gente -->
+	<div class="caja-comentarios">
+		<h3>Comentarios de los usuarios : </h3> <br>
+		##comments##
+			<b>##usuario## </b> <p>##comentario## </p>
+			<hr />
+		##comments##
+		<!-- Los registrados pueden escribir comentarios!-->
+		##registrado##
+		<div id="box">
+			<form method="post" action="index.php">
+			   <h3>
+			   	<br>
+				¡Danos tu comentario sobre lo que te ha parecido el Vehiculo!
+			   </h3>
+			   <textarea name="COMMENT" rows="5" cols="77.5" wrap="soft" placeholder="Máximo 1000 carácteres" maxlength="1000" required></textarea><br />
+			   <input type="hidden" name="nombreVehiculo" value="##nombrevehiculo##" >
+			   <input type="hidden" name="nombreUsuario" value="##nombreusu##" >
+			   <input type="hidden" name="accion" value="enviarComment" >
+			   <input class="btn btn-success" type="submit" value="Enviar" name="Enviar" />
+			</form>
+		</div>
+		##registrado##
+	</div>
+	<br>
+	<a class="btn btn-primary" href="http://webalumnos.tlm.unavarra.es:10705/final/index.php">Volver</a>	
+</body>
+
+<script>
+	function cambiarFotoGrande(nombrecoche,nombrefoto,i) {
+	  var expandImg = document.getElementById("expandedImg");
+	  expandImg.src = "/final/admin/imagenes/"+nombrecoche+"/medianas/"+nombrefoto;
+	  currentSlide(i);
+	  expandImg.parentElement.style.display = "block";
+	}
+
+	// Open the Modal
+	function openModal() {
+	  document.getElementById("myModal").style.display = "block";
+	}
+
+	// Close the Modal
+	function closeModal() {
+	  document.getElementById("myModal").style.display = "none";
+	}
+
+	var slideIndex = 1;
+	showSlides(slideIndex);
+
+	// Next/previous controls
+	function plusSlides(n) {
+	  showSlides(slideIndex += n);
+	}
+
+	// Thumbnail image controls
+	function currentSlide(n) {
+	  showSlides(slideIndex = n);
+	}
+
+	function showSlides(n) {
+	  var i;
+	  var slides = document.getElementsByClassName("mySlides");
+	  var dots = document.getElementsByClassName("demo");
+	  var captionText = document.getElementById("caption");
+	  if (n > slides.length) {slideIndex = 1}
+	  if (n < 1) {slideIndex = slides.length}
+	  for (i = 0; i < slides.length; i++) {
+	    slides[i].style.display = "none";
+	  }
+	  for (i = 0; i < dots.length; i++) {
+	    dots[i].className = dots[i].className.replace(" active", "");
+	  }
+	  slides[slideIndex-1].style.display = "block";
+	  dots[slideIndex-1].className += " active";
+	  captionText.innerHTML = dots[slideIndex-1].alt;
+	}
+</script>
+</html>

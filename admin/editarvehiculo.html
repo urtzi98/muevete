@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Editar vehiculo</title>
+	<link href="../css/estilos.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="dropzone/dist/dropzone.css" />
+	<link rel="stylesheet" type="text/css" href="../css/estilos.css" />
+	<script type="text/javascript" src="dropzone/dist/dropzone.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+			function aBorrar(nombrefoto,ruta,nombrecoche){
+				       if (confirm('Estas seguro de que quieres borrar la foto '+nombrefoto+'?')) {
+							window.location = "index.php?accion=editarvehiculo&id=3&foto="+nombrefoto+"&num="+nombrecoche;
+					    } 
+    		}
+	</script>
+</head>
+<style>
+input[type=text], select {
+  padding: 12px 20px;
+  margin: 4px 0 8px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 600px;
+  position:relative;
+  left: 30px;
+}
+input[type=submit] {
+  width: 600px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 4px 0 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position:relative;
+  left: 30px;
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+  width: 600px;
+  position:relative;
+  left: 30px;
+}	
+label {
+  position:relative;
+  left: 30px;
+}
+h1{
+	margin: 10px 10px 0px;
+
+}
+.container {
+  
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+.container img {
+  width: 100%;
+  height: auto;
+}
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+.container .btn:hover {
+  background-color: black;
+}
+.fotos{
+  margin-right: 100px;
+  margin-top:20px;
+  float:right;
+}
+form.datos{
+  float:left;
+  margin-left:30px;
+}
+.drpzn{
+  clear:both;
+  width:100%;
+}
+label{
+  width: 800px;
+}
+</style>
+
+<body>
+	<script src="./path/to/dropzone.js"></script>
+	<h1>Editar vehiculo</h1>
+    
+
+	<link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+            integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+            crossorigin="anonymous">
+       
+  <div class="elementos">
+	<form class="datos">
+		<label for="nombre">Nombre </label><br>
+		<input type="text" name="nombre" value="##nombre##" id="nombre"><br>
+		<label for="nombre">Descripcion </label><br>
+		<input type="text" name="descripcion" value="##descripcion##" id="descripcion" style="padding-bottom:100px;"><br>
+		<label for="color">Color </label><br>
+		<input type="text" name="color" id="color" value="##color##"><br>
+		<label for="precio">Precio </label><br>
+		<input type="text" name="precio"  id="precio" value="##precio##"><br>
+		<label for="kilometros">Kilometraje </label><br>
+		<input type="text" name="kilometros" id="kilometros" value="##kilometros##"><br>
+		<input type="hidden" name="accion" value="editarvehiculo">
+		<input type="hidden" name="id" value="2">
+		<input type="hidden" name="num" value="##nombre##">
+		<input type="submit" name="enviar" value="Enviar">
+	</form>
+  </div>
+	<div class="fotos">
+	##foto##
+			<div class="container">
+				<img src="##path##" alt="##nombrefoto##" style="width:100%">
+				<button class="btn" onclick='aBorrar("##nombrefoto##","##path##","##nombre##");' >Borrar</button>
+		</div>
+    <br>
+	##foto##
+    <center><a href="index.php?accion=editarvehiculo&id=1&num=##nombre##" style="color:black">Recargar para visualizar fotos subidas</a></center>
+	</div>
+	
+  <div class="drpzn">
+	<form action="index.php?accion=subirfoto&id=11&num=1" class="dropzone" method="post" enctype="multipart/form-data">
+		<div class="fallback">
+			<input name="file" id="file" type="file" multiple />
+		</div>
+		<input type="hidden" name="nombrecoche" value="##nombre##">
+		<input type="hidden" name="idcoche" value="##numero##">
+	</form>
+  </div>
+
+	<center><a href="index.php?accion=borrarvehiculo&id=1&num=##nombre##" style="color:black"> Borrar este vehiculo</a></center><br><br>
+	
+	<a href="index.php?accion=vehiculos&id=1&num=-1" style="margin:10px 20px;position: absolute;color:black">Volver</a><br>
+</body>
+</html>

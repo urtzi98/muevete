@@ -1,0 +1,34 @@
+<html>
+
+<head>
+<title>Edit Image</title>
+<link href="../css/estilos.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="dropzone/dist/dropzone.css" />
+<script type="text/javascript" src="dropzone/dist/dropzone.js"></script>
+<style type="text/css">
+    h1{
+        margin-left: 2%;
+    }
+
+    a{
+        margin-left : 6%;
+    }
+</style>
+</head>
+
+<body>
+
+    <div class="box-preview">
+        <img src="<?php echo $row['uploads/clio.jpg']; ?>" />
+        <div class="preview-footer"><?php echo $row["uploads/clio.jpg"]; ?></div>
+    </div>
+
+    <form name="frmImage"
+        action="image-edit.php?action=save&image_id=<?php echo $_GET['image_id']?>"
+        class="dropzone"></form>
+    <div class="btn-menu">
+        <a href="index.php" class="link">Back to List</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+body
+{
+background-repeat: no-repeat;
+background: url(../img/background.png);
+background-size: auto;
+}
+
+header 
+{	
+
+	margin-top: 4%;
+	margin-right: 2%;
+	margin-left: 2%;
+	text-align: center;
+
+}
+
+section, div
+{
+	margin-top: 2px;
+	margin-right: 2px;
+	margin-left: 2px;
+}
+.login{
+	margin-left:auto;
+	margin-bottom:auto;
+}
+.logo{
+	
+	float:left;
+}
+
+.pad-basic
+
+{
+padding:.5%; 
+	
+}
+
+.no-btm
+{
+	margin-bottom:0%;
+}
+
+.btn-der
+{
+	text-align: right;
+}
+
+
+

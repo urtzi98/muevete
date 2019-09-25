@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  	<link href="../css/estilos.css" rel="stylesheet">
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<title>Menú de administración</title>
+		<style type="text/css">
+		h1{
+			margin-left: 2%;
+		}
+
+		a{
+			margin-left : 6%;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Menú de administración</h1>
+	<h2><a href="index.php?accion=usuarios&id=1&num=-1">Listado de usuarios</a></h2>
+	<h2><a href="index.php?accion=vehiculos&id=1&num=-1">Listado de vehiculos</a></h2><br><br><br>
+	<a href="pdflistadovehiculo.php"><i class="fa fa-file-pdf-o" style="font-size:24px;color:red">Listado de vehiculos</i></a><br>
+	<a href="pdflistadopersona.php"><i class="fa fa-file-pdf-o" style="font-size:24px;color:red">Listado de usuarios</i></a><br>
+	<a href="jsonlistadopersona.php"><i class="fa fa-file-code-o" style="font-size:24px;color:red">Listado de usuarios</i></a><br><br>
+	<a href="/final/admin/index.php?accion=cargarUsuarios&id=1&num=-1" class="btn btn-info">Cargar Usuarios</a><br><br>
+	<a href="/final/index.php" style="margin:10px 20px;position: absolute; bottom: 10px" class="btn btn-success">Menu principal</a>
+</body>
+</html>
